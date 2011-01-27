@@ -314,3 +314,151 @@ Processing ProductsController#index (for 127.0.0.1 at 2011-01-24 08:45:14) [GET]
 Rendering template within layouts/products
 Rendering products/index
 Completed in 130ms (View: 84, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-25 13:22:03) [GET]
+  [4;36;1mProduct Load (2.2ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 379ms (View: 354, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-01-25 13:22:07) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 89ms (View: 68, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-25 13:22:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lbZxKR/p6nqWjtuGtUpVCpnmB9FL371pjBu4iIIAix8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"sdkihf", "description"=>""}}
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT "products".id FROM "products" WHERE ("products"."title" = 'sdkihf') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 98ms (View: 65, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-25 13:45:06) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lbZxKR/p6nqWjtuGtUpVCpnmB9FL371pjBu4iIIAix8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"sdkihf", "description"=>""}}
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT "products".id FROM "products" WHERE ("products"."title" = 'sdkihf') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 90ms (View: 60, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-25 13:45:17) [GET]
+  [4;35;1mProduct Load (2.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 58ms (View: 39, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-25 13:45:19) [GET]
+  [4;36;1mProduct Load (1.8ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 160ms (View: 142, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-25 13:45:20) [GET]
+  [4;35;1mProduct Load (2.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 55ms (View: 36, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-25 13:45:54) [GET]
+  [4;36;1mProduct Load (2.7ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 60ms (View: 38, DB: 3) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-26 10:59:25) [GET]
+  [4;36;1mProduct Load (2.1ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 381ms (View: 344, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-01-26 10:59:28) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 72ms (View: 52, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 10:59:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"joUoCSQOyYh67o2ELUDgWzEEilMu5ZbN8sTvVhKRGFc=", "product"=>{"price"=>"0.0", "image_url"=>"kfjsalkf", "title"=>"sf", "description"=>"ger"}}
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT "products".id FROM "products" WHERE ("products"."title" = 'sf') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 72ms (View: 41, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-26 10:59:48) [GET]
+  [4;36;1mProduct Load (1.7ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 57ms (View: 40, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-01-26 10:59:52) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 46ms (View: 26, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 11:00:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"joUoCSQOyYh67o2ELUDgWzEEilMu5ZbN8sTvVhKRGFc=", "product"=>{"price"=>"3.0", "image_url"=>"sgsda", "title"=>"sldkjfl", "description"=>"asedhfkajs"}}
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT "products".id FROM "products" WHERE ("products"."title" = 'sldkjfl') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 119ms (View: 72, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-26 15:44:55) [GET]
+  [4;36;1mProduct Load (3.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 408ms (View: 367, DB: 3) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-01-26 15:51:20) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 409ms (View: 387, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 15:51:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ZnodWzFyLpm6ig50nGrRjkW+mm2wOl7YFtj1F6qa0d8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"d", "description"=>""}}
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT "products".id FROM "products" WHERE ("products"."title" = 'd') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 105ms (View: 68, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 15:53:45) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ZnodWzFyLpm6ig50nGrRjkW+mm2wOl7YFtj1F6qa0d8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"d", "description"=>""}}
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT "products".id FROM "products" WHERE ("products"."title" = 'd') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 91ms (View: 59, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 15:53:49) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ZnodWzFyLpm6ig50nGrRjkW+mm2wOl7YFtj1F6qa0d8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"d", "description"=>""}}
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT "products".id FROM "products" WHERE ("products"."title" = 'd') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 100ms (View: 61, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-26 16:03:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ZnodWzFyLpm6ig50nGrRjkW+mm2wOl7YFtj1F6qa0d8=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"d", "description"=>""}}
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT "products".id FROM "products" WHERE ("products"."title" = 'd') LIMIT 1[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 108ms (View: 75, DB: 1) | 200 OK [http://localhost/products]
