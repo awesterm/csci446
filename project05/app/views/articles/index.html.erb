@@ -1,0 +1,33 @@
+<h2>All the World's Articles</h2>
+<%= link_to image_tag("images/add.png"), new_article_path %>Create an Article
+
+<div id="product-list">
+<col class="column"/>
+<table>
+  <tr class="list-description">
+    <th>Title</th>
+    <th>Author</th>
+    <th>Body</th>
+    <th>Creation date</th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr class="list-description">
+ 
+    <td><%=h article.title %></td>
+    <td><%=h article.author %></td>
+    <td><%=h truncate(article.body, :length => 80) %></td>
+    <td><%=h article.creation_date %></td>
+    <td><%= link_to image_tag("images/zoom.png"), article %></td>
+    <td><%= link_to image_tag("images/email_edit.png"), edit_articles_path(article) %></td>
+    <td><%= link_to image_tag("images/bin.png"), article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+
+
+
+
