@@ -1,0 +1,41 @@
+<title>
+	Artile.es -- All the World's Articles (With a name .com hipsters love)
+</title>
+<center>
+<h1>Articl.es</h1>
+... with a name .com hipsters love!
+</center>
+
+<h2>All the World's Articles</h2>
+<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/add.png"), new_product_path %>Create an Article
+
+<div id ="product-list">
+<col = class"column"/>
+<table>
+  <tr class="list-description">
+    <th>Title</th>
+    <th>Author</th>
+    <th>Body</th>
+    <th>Creation date</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr class="list-description">
+ 
+    <td><%=h product.title %></td>
+    <td><%=h product.author %></td>
+    <td><%=h truncate(product.body, :length => 80) %></td>
+    <td><%=h product.creation_date %></td>
+    <td><%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/zoom.png"), product %></td>
+    <td><%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/email_edit.png"), edit_product_path(product) %></td>
+    <td><%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/bin.png"), product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+
+
+
+

@@ -1,0 +1,28 @@
+<title>
+	Artile.es -- All the World's Articles (With a name .com hipsters love)
+</title>
+<center>
+<h1>Articl.es</h1>
+... what's "Articl" In Spanish anyway?
+</center>
+
+<%= link_to 'list all articles', products_path %>
+<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/email_edit.png"), edit_product_path(@product) %>
+<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/bin.png"), @product, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/email.png"), edit_product_path(@product) %>
+<!-- should use mail_to -->
+
+<h2><%=h @product.title%></h2>
+
+<p>
+  by <%=h @product.author %> <%=h @product.creation_date %>.
+</p>
+
+</ br>
+<p>
+  <%=h @product.body %>
+</p>
+
+
+
+
