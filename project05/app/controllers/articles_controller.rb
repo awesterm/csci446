@@ -1,83 +1,69 @@
+# A minimal RESTfulcontroller. Notice how respond_to blocks and render() calls are optional.
+# You can _think_ of the "default respond_to format" being html.
+# Realize that without an explicit render() call, the controller will attempt
+# to render app/views/controller_name/action_name.html.erb.
 class ArticlesController < ApplicationController
-  # GET /products
-  # GET /products.xml
+
+  before_filter :set_edit_return_url, :only => [:edit]
+  before_filter :load_authors, :only => [:new, :edit, :update]
+
   def index
-    @articles = Article.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @articles }
-    end
+  	 @num_articles = Article.count
+	 @articles = Article.paginate(:page => params[:page])
   end
 
-  # GET /products/1
-  # GET /products/1.xml
   def show
-    @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @product }
-    end
+    @article = Article.find(params[:id])
   end
 
-  # GET /products/new
-  # GET /products/new.xml
   def new
-    @product = Product.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @product }
-    end
+    @article = Article.new
   end
 
-  # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
-  # POST /products
-  # POST /products.xml
   def create
-    @product = Product.new(params[:product])
+    @article = Article.new(params[:article])
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
-        format.xml  { render :xml => @product, :status => :created, :location => @product }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
-      end
+    if @article.save
+      redirect_to(@article, :flash => { :success => 'Article was successfully created.' })
+    else
+      flash[:error] = 'There was a problem creating the article.'
+      render :action => "new"
     end
+
   end
 
-  # PUT /products/1
-  # PUT /products/1.xml
   def update
-    @product = Product.find(params[:id])
+    @article = Article.find(params[:id])
 
-    respond_to do |format|
-      if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
-      end
+    if @article.update_attributes(params[:article])
+      redirect_to(session[:edit_redirect], :flash => { :success => 'Article was successfully udpated.' })
+    else
+      flash[:error] = 'There was a problem updating the article.'
+      render :action => "edit"
     end
+
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.xml
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
+    @article = Article.find(params[:id])
+    @article.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(products_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(articles_url, :flash => { :success => 'Article was successfully deleted.' })
+
   end
+
+  private
+  
+    def set_edit_return_url
+      session[:edit_redirect] = request.referer
+    end
+
+	 def load_authors
+	 	@authors=Author.all.collect
+	 end	
+
 end

@@ -1,0 +1,32 @@
+<% content_for :subtitle do %>
+ ...a moose once bit my sister.
+<% end %>
+				
+
+<ul class="menu">
+      <li>
+		    <%= link_to image_tag('icon_small_larrow.png'), authors_path, :title => 'back to list' %>
+		    <%= link_to 'list all authors', authors_path, :title => 'back to list' %>
+		</li>
+</ul>
+
+
+<h3>New author</h1>
+
+<% form_for(@author, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  	<%= f.label :photo %><br />
+	<%= f.file_field :photo %>
+  </p>	
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', authors_path %>

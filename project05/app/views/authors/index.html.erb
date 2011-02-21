@@ -1,0 +1,40 @@
+<% content_for :subtitle do %>
+...the wonderful telephone system.
+<% end %>
+
+<h3>Listing Authors
+	<span class="ui">
+		<%= link_to image_tag('icon_small_add.png'), new_author_path, :title => 'create a new author' %>
+		<%= link_to 'new author', new_author_path, :title => 'create a new author' %>
+	</span>	
+</h3>
+
+<%= will_paginate @authors%>
+
+<table id="articles_list">
+ 	 <tr>
+   	 <th></th>
+		 <th></th>
+  	 </tr>
+	</thead>
+	 <tfoot>
+	      <tr>
+			  <td colspan="5">
+			  </td>
+			</tr>
+    </tfoot>
+	<tbody>
+<% @authors.each do |author| %>
+  <tr>
+    <td><%=h author.name %></td>
+	 <td>
+    	<%= link_to image_tag('icon_small_zoom.png'), author %>
+    	<%= link_to image_tag('icon_small_edit.png'), edit_author_path(author) %>
+    	<%= link_to image_tag('icon_small_delete.png'), author, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

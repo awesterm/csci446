@@ -1,0 +1,33 @@
+<% content_for :subtitle do %>
+	Life is wrinkley   
+<% end %>
+ 
+<ul class="menu">
+    <li>
+  		  <%= link_to image_tag('icon_small_larrow.png'), authors_path, :title => 'back to list' %>
+		  <%= link_to 'list all articles', authors_path, :title => 'back to list' %>
+	 </li>
+	 <li>
+	      <%= link_to image_tag('icon_small_edit.png'), edit_author_path(@author), :title => 'edit aurthor' %>
+		   <%= link_to 'edit', edit_author_path(@author), :title => 'edit author' %>
+	 </li>
+	 <li>
+	      <%= link_to image_tag('icon_small_delete.png'), @author, :confirm => 'Are you sure?', :method => :delete, :title => "delete author" %>
+	      <%= link_to 'delete', @author, :confirm => 'Are you sure?', :method => :delete, :title => "delete author" %>
+	 </li>
+</ul>
+																																					  
+
+<h3>
+<p>
+  <b>Name:</b>
+  <%=h @author.name %>
+</p>
+<h3>
+<p>
+	<b>Photo:</b>
+	<%= image_tag @author.photo.url %>	
+</p>	
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

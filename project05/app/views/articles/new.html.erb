@@ -1,34 +1,19 @@
-<title>
-	Artile.es -- All the World's Articles (With a name .com hipsters love)
-</title>
-<center>
-<h1>Articl.es</h1>
-... not just for the country of Spain
-</center>
-
-<%= link_to 'Back', products_path %>
-
-<h2>Creating a New Artile</h2>
-<% form_for(@product) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= @product.creation_date = Date.today %>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-  
+<% content_for :subtitle do %>
+...not just for the country of Spain
 <% end %>
 
+<ul class="menu">
+  <li>
+    <%= link_to image_tag('icon_small_larrow.png'), articles_path, :title => 'back to list' %>
+    <%= link_to 'list all articles', articles_path, :title => 'back to list' %>
+  </li>
+</ul>
+
+<h3>Creating a New article</h3>
+
+<% form_for(@article) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Create!' %>
+  </p>
+<% end %>

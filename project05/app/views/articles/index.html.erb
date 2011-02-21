@@ -1,33 +1,53 @@
-<h2>All the World's Articles</h2>
-<%= link_to image_tag("images/add.png"), new_article_path %>Create an Article
-
-<div id="product-list">
-<col class="column"/>
-<table>
-  <tr class="list-description">
-    <th>Title</th>
-    <th>Author</th>
-    <th>Body</th>
-    <th>Creation date</th>
-  </tr>
-
-<% @articles.each do |article| %>
-  <tr class="list-description">
- 
-    <td><%=h article.title %></td>
-    <td><%=h article.author %></td>
-    <td><%=h truncate(article.body, :length => 80) %></td>
-    <td><%=h article.creation_date %></td>
-    <td><%= link_to image_tag("images/zoom.png"), article %></td>
-    <td><%= link_to image_tag("images/email_edit.png"), edit_articles_path(article) %></td>
-    <td><%= link_to image_tag("images/bin.png"), article, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :subtitle do %>
+...with a name .com hipsters love!
 <% end %>
+
+<h3>All the World's Articles
+  <span class="ui">
+    <%= link_to image_tag('icon_small_add.png'), new_article_path, :title => 'create a new article' %>
+    <%= link_to 'new article', new_article_path, :title => 'create a new article' %>
+  </span>
+</h3>
+
+
+<%= will_paginate @articles%>
+
+<table id="articles_list">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author name</th>
+      <th>Body</th>
+      <th>Creation Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+        <p><%= @articles.size %> out of <%= pluralize(@num_articles, 'article') %>.</p>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%=h article %></td>
+        <td><%=h article.author %></td>
+        <td><%= truncate(article.body, :length => 20) %></td>
+        <td><%= article.created_at.to_s(:datetime) %></td>
+        <td>
+          <%= link_to image_tag('icon_small_zoom.png'), article, :title => "view article" %>
+          <%= link_to image_tag('icon_small_edit.png'), edit_article_path(article), :title => "edit article" %>
+          <%= link_to image_tag('icon_small_delete.png'), article, :confirm => 'Are you sure?', :method => :delete, :title => "delete article" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+
+  </tfoot>
 </table>
-</div>
+
 <br />
-
-
-
-
 

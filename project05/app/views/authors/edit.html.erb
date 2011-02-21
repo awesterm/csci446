@@ -1,0 +1,30 @@
+<% content_for :subtitle do %>
+      ... see the lovely lakes.
+<% end %>
+ 
+<ul class="menu">
+   <li>
+   <%= link_to image_tag('icon_small_larrow.png'), authors_path %>
+	<%= link_to 'back', authors_path %>
+   </li>
+</ul>
+
+
+<h3>Editing author</h3>
+
+<% form_for(@author, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  	<%= f.label :photo %><br />
+	<%= f.file_field :photo %>
+  </P>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+

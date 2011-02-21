@@ -1,28 +1,29 @@
-<title>
-	Artile.es -- All the World's Articles (With a name .com hipsters love)
-</title>
-<center>
-<h1>Articl.es</h1>
-... what's "Articl" In Spanish anyway?
-</center>
+<% content_for :subtitle do %>
+what's "Articl" in Spanish anyway?
+<% end %>
 
-<%= link_to 'list all articles', products_path %>
-<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/email_edit.png"), edit_product_path(@product) %>
-<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/bin.png"), @product, :confirm => 'Are you sure?', :method => :delete %>
-<%= link_to image_tag("../../../famfamfam_silk_icons_v013/icons/email.png"), edit_product_path(@product) %>
-<!-- should use mail_to -->
+<ul class="menu">
+  <li>
+    <%= link_to image_tag('icon_small_larrow.png'), articles_path, :title => 'back to list' %>
+    <%= link_to 'list all articles', articles_path, :title => 'back to list' %>
+  </li>
+  <li>
+    <%= link_to image_tag('icon_small_edit.png'), edit_article_path(@article), :title => 'edit article' %>
+    <%= link_to 'edit', edit_article_path(@article), :title => 'edit article' %>
+  </li>
+  <li>
+    <%= link_to image_tag('icon_small_delete.png'), @article, :confirm => 'Are you sure?', :method => :delete, :title => "delete article" %>
+    <%= link_to 'delete', @article, :confirm => 'Are you sure?', :method => :delete, :title => "delete article" %>
+  </li>
+  <li>
+    <%= mail_to '', image_tag('icon_small_email.png'), :subject => @article.title, :body => article_url(@article), :title => 'email article' %>
+    <%= mail_to '', 'email', :subject => @article.title, :body => article_url(@article), :title => 'email article' %>
+  </li>
+</ul>  
 
-<h2><%=h @product.title%></h2>
-
-<p>
-  by <%=h @product.author %> <%=h @product.creation_date %>.
+<h3><%=h @article.title %></h3>
+<p class="byline">by <%=h @article.author %>. <%= pluralize(@article.update_count, 'update') %> since <%= @article.created_at.to_s(:short)%>.</p>
 </p>
-
-</ br>
-<p>
-  <%=h @product.body %>
-</p>
-
-
-
-
+<div class="article_body">
+  <%= simple_format(h(@article.body)) %>
+</div>

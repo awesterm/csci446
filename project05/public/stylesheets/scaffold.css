@@ -1,7 +1,6 @@
 body { background-color: #fff; color: #333; }
 
-/* Default Styles */
-body, p, ol, ul {
+body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
@@ -53,30 +52,3 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-/* Styles for products/index */
-
-#heading {
-	text-align: center
-}
-
-#product-list table {
-	bborder-collapse:collapse;
-
-border: 1px solid black;
-	
-}
-#product-list th {
-	background-color:GRAY;
-
-	
-}
-
-/* Styles for new/edit */
-#entry p
-{
-	dislpay: inline;
-}
-
-h1 {
-  text-align: center;
-}
