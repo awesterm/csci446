@@ -1,9 +1,55 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  rating: MyString
+navel_battles:
+  title: Navel Battles
+  rating: meh
 
-two:
-  title: MyString
-  rating: MyString
+bejeweled:
+  title: Bejeweled
+  rating: sweettastic
+
+the_bird_is_the_word:
+  title: The Bird is the Word
+  rating: Swell
+
+great_balls_of_fire:
+  title: Great Balls of Fire
+  rating: Goodness Gracious
+
+toy_soldiers:
+  title: Toy Soldiers
+  rating: I feel like a kid again!
+ 
+foo_fighters:
+  title: Foo Fighters
+  rating: Pretender
+
+nirvana:
+  title: Nirvana
+  rating: Here we are now entertainters!
+
+boccherini:
+  title: Boccherini
+  rating: Minuetto
+
+cantates_profanes:
+  title: Cantates Profanes
+  rating: Orff
+
+toccata_y_fugue:
+  title: Toccata y Fugue
+  rating: Bachable
+
+don_quixote_de_la_mancha:
+  title: Don Quixote de la Mancha
+  rating: Jousting at Windmills
+
+voltaire:
+  title: Voltaire
+  rating: Candid
+
+hardin:
+  title: Hardin
+  rating: tragedy
+
+
