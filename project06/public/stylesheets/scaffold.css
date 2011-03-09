@@ -56,3 +56,11 @@ a:hover { color: #fff; background-color:#000; }
 
   font-size: 12px;
 }  
+
+#game-list .list-line-even {
+  background: #f8b0f8;
+}
+
+#game-list .list-line-odd {
+  background: #2222f8;
+  }

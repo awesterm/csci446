@@ -1,5 +1,6 @@
 <h1>Listing games</h1>
 
+<div id="game-list">
 <table>
   <tr>
     <th>Title</th>
@@ -7,16 +8,15 @@
   </tr>
 
 <% @games.each do |game| %>
-  <tr>
+  <tr class=<%= cycle('list-line-odd', 'list-line-even') %>>
     <td><%=h game.title %></td>
     <td><%=h game.rating %></td>
-    <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New game', new_game_path %>
