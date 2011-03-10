@@ -2,10 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-#  include Authentication
+  #include Authentication
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-#  before_filter { |c| Authorization.current_user = c.current_user }
+  #before_filter { |c| Authorization.current_user = c.current_user }
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password

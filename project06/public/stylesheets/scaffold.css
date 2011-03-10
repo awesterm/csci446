@@ -1,10 +1,16 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #737CA1; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
 }
+
+h1 {
+ color: #C6AEC7;
+ text-align: center;
+ font-size: 3em;
+ }
 
 pre {
   background-color: #eee;
@@ -52,15 +58,28 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-#user_nav {
-
-  font-size: 12px;
+#container {
+  margin:auto; 
+  padding: 0 1em 1em 1em;
+  width: 960px;
 }  
 
 #game-list .list-line-even {
-  background: #f8b0f8;
+  background: #717D7D;
 }
 
 #game-list .list-line-odd {
-  background: #2222f8;
+  background: #AFC7C7;
   }
+
+table#games_list {
+   margin-top: 2em;
+   border-collapse: collapse;
+   width: 900px;
+ }
+table#articles_list th {
+  background: #717D7D;
+   margin: 10px 0px;
+   padding: 10px;
+}
+					

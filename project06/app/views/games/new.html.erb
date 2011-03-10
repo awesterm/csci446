@@ -1,4 +1,3 @@
-<h1>New game</h1>
 
 <% form_for(@game) do |f| %>
   <%= f.error_messages %>
@@ -8,8 +7,24 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+    <%= f.radio_button :rating,"It is more fun than eating candy." %>
+    <%= f.label :it_is_more_fun_than_eating_candy %>
+  </p>
+  <p>
+    <%= f.radio_button :rating,"It is fun the first time." %>
+    <%= f.label :it_is_fun_the_first_time %>
+  </p>
+  <p>
+    <%= f.radio_button :rating,"It is the definition of mediocrity." %>
+    <%= f.label :it_is_the_definition_of_mediocrity %>
+  </p>
+  <p>
+    <%= f.radio_button :rating,"It is like watching paint dry." %>
+    <%= f.label :it_is_like_watching_paint_dry %>
+  </p>
+  <p>
+    <%= f.radio_button :rating,"It is complete and total rubbish." %>
+    <%= f.label :it_is_coplete_and_total_rubbish %>
   </p>
   <p>
     <%= f.submit 'Create' %>
