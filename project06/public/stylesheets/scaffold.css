@@ -6,6 +6,19 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+#games-list tr{
+  background-color: #AFC7C7;
+}
+
+p#centered{
+	margin-left: auto
+	margin-right: auto
+}
+
+p#session {
+	text-align: right
+}
+
 h1 {
  color: #C6AEC7;
  text-align: center;
@@ -18,9 +31,9 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a { color: #AFC7C7; }
+a:visited { color: #AFC7C7; }
+a:hover { color: #AFC7C7; background-color: #717D7D; }
 
 .fieldWithErrors {
   padding: 2px;
@@ -65,21 +78,24 @@ a:hover { color: #fff; background-color:#000; }
 }  
 
 #game-list .list-line-even {
-  background: #717D7D;
+  background: #AFC7C7;
 }
 
 #game-list .list-line-odd {
-  background: #AFC7C7;
+  background: #717D7D;
   }
 
 table#games_list {
+	magin-left: auto;
+	margin-right: auto;
+	
    margin-top: 2em;
    border-collapse: collapse;
    width: 900px;
  }
 table#articles_list th {
-  background: #717D7D;
-   margin: 10px 0px;
-   padding: 10px;
+  background-color: #717D7D;
+  margin: 10px 0px;
+  padding: 10px;
 }
 					

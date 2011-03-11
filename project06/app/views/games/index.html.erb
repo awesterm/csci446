@@ -1,26 +1,30 @@
 
-<%= will_paginate @articles%>
+<% if current_user %>
+		<h3>My Games
+			<%= link_to image_tag('icon_small_add.png'), new_game_path, :title => 'create a new rating' %>
+			<%= link_to 'New Rating', new_game_path, :title => 'create a new rating' %>
+	   </h3>		
+<% end %>
+<p id="centered">
+	<%= will_paginate @articles%>
+</p>
 
 <div id="game-list">
 <table id="games-list">
   <tr>
     <th>Title</th>
     <th>Rating</th>
+	 <th>Date Added</th>
   </tr>
 
 <% @games.each do |game| %>
   <tr class=<%= cycle('list-line-odd', 'list-line-even') %>>
     <td><%=h game.title %></td>
     <td><%=h game.rating %></td>
-    <td><%= link_to image_tag('icon_small_edit.png'), edit_game_path(game) %></td>
-    <td><%= link_to image_tag('icon_small_delete.png'), game, :confirm => 'Are you sure?', :method => :delete %></td>
+	 <td><%=h game.created_at.to_s(:datetime) %></td>
   </tr>
 <% end %>
 </table>
 </div>
 <br />
-
-<%= link_to image_tag('icon_small_add.png'), new_game_path, :title => 'create a new rating' %>
-<%= link_to 'New Rating', new_game_path, :title => 'create a new rating' %>
-
 

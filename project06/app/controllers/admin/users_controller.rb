@@ -4,20 +4,6 @@ class Admin::UsersController < Admin::AdminController
 
   USERS_PER_PAGE = 20
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Registration Sucessful."
-      redirect_to root_url
-    else
-      render :action => 'new'
-    end
-  end
-
   def edit
     @user = current_user
   end
